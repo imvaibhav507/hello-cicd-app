@@ -4,7 +4,7 @@
 
 	<groupId>9d11e3b3-8ae9-4d0f-95ee-cf30a4856be4</groupId>
 	<artifactId>hello-cicd-app</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<packaging>mule-application</packaging>
 	<name>hello-cicd-app</name>
 
@@ -83,7 +83,7 @@
 
 	<repositories>
 		<repository>
-			<id>ca.anypoint.credentials</id>
+			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
