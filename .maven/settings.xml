@@ -3,12 +3,12 @@
 		<server>
 			<id>ca.anypoint.credentials</id>
 			<username>~~~Client~~~</username>
-			<password>${CA_CLIENT_ID}~?~{CA_CLIENT_SECRET}</password>
+			<password>947f3faaf00f4cd498d0a3784552dd2c~?~4C4F75eec63745329e2B9B7F89f24A29</password>
 		</server>
 		<server>
 			<id>anypoint-exchange-v3</id>
 			<username>~~~Client~~~</username>
-			<password>${CA_CLIENT_ID}~?~{CA_CLIENT_SECRET}</password>
+			<password>947f3faaf00f4cd498d0a3784552dd2c~?~4C4F75eec63745329e2B9B7F89f24A29</password>
 		</server>
 	</servers>
 	<pluginGroups>
