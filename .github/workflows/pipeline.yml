@@ -114,5 +114,4 @@ jobs:
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -s .maven/settings.xml \
-         -DskipTests \
-         -DskipDeploymentVerification="true"
+         -DskipTests -DskipDeploymentVerification="true"
