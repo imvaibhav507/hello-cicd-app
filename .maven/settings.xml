@@ -2,7 +2,7 @@
 	<mirrors>
 	  <mirror>
 		<id>anypoint-exchange</id>
-		<mirrorOf>*</mirrorOf>
+		<mirrorOf>com.mulesoft.*</mirrorOf>
 		<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 	  </mirror>
 	</mirrors>
