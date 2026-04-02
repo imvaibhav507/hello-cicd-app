@@ -8,12 +8,12 @@
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
 	<munit:config name="test-test-suite.xml" />
-	<munit:test name="test-test-suite-testFlowTest" doc:id="e49e2275-ffea-4c29-aa63-463f9675f1fb" description="Test">
+	<munit:test name="test-test-suite-testFlowTest" doc:id="d9bcb2b8-fdb1-47fd-acaf-19b551cd249e" description="Test">
 		<munit:execution >
-			<flow-ref doc:name="Flow-ref to testFlow" doc:id="c5edfa16-c7f4-4234-90b7-e808e134266d" name="testFlow"/>
+			<flow-ref doc:name="Flow-ref to testFlow" doc:id="1a2a7d64-23b7-4a10-9535-8fa45a3a7d55" name="testFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert doc:name="Assert expression" doc:id="2866c402-40d4-4bfe-994e-e0afe0181eb5" />
+			<munit-tools:assert doc:name="Assert expression" doc:id="a9b4428a-8ad1-4bfe-b967-f08d804563c6" />
 		</munit:validation>
 	</munit:test>
 
