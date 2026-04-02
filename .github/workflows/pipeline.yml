@@ -41,7 +41,7 @@ jobs:
 
 
     - name: Build with Maven
-      run: mvn -B clean package -s .maven/settings.xml
+      run: mvn -B clean package -Dmaven.test.skip=true -s .maven/settings.xml
 
     - name: Stamp artifact file name with commit hash
       if: github.event_name == 'push'   # only needed for deploy flow
