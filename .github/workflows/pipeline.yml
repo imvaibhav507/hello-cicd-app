@@ -47,12 +47,16 @@ jobs:
     # MUNIT RUN (PR)
     - name: Run MUnit Tests (PR only)
       if: github.event_name == 'pull_request'
-      run: mvn -B clean test -s .maven/settings.xml
+      run: mvn -B clean test \
+        -s .maven/settings.xml \
+        -DargLine="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
 
     # NORMAL BUILD (PUSH)
     - name: Build with Maven (Skip tests on push)
       if: github.event_name == 'push'
-      run: mvn -B clean package -DskipTests -s .maven/settings.xml
+      run: mvn -B clean package -DskipTests \
+        -s .maven/settings.xml \
+        -DargLine="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
 
     - name: Build with Maven
       run: mvn -B clean package -s .maven/settings.xml
