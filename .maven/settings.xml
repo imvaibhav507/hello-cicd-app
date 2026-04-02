@@ -1,4 +1,11 @@
 <settings>
+	<mirrors>
+	  <mirror>
+		<id>anypoint-exchange</id>
+		<mirrorOf>*</mirrorOf>
+		<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+	  </mirror>
+	</mirrors>
 	<servers>
 		<server>
 			<id>ca.anypoint.credentials</id>
