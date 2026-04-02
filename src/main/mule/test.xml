@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="testFlow" doc:id="ba9fc5fc-bd3f-4a82-91ca-1fa0234c743e" >
+		<logger level="INFO" doc:name="Logger" doc:id="21e9dc63-2319-4ac5-b6a9-fe8ae410df2c" message="get:\hello:hello-cicd-api-config" />
+		<ee:transform doc:name="Transform Message" doc:id="67c89e20-219a-4776-b965-2230e31757ce" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message": "hello world!!",
+	"description": "Testing pipeline. direct push to main"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

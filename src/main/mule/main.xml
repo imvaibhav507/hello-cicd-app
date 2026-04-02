@@ -99,17 +99,6 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\hello:hello-cicd-api-config">
-        <logger level="INFO" message="get:\hello:hello-cicd-api-config" />
-		<ee:transform doc:name="Transform Message" doc:id="ebdb1288-d711-4b17-8384-84ba41abb177" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
----
-{
-	"message": "hello world!!",
-	"description": "Testing pipeline. direct push to main"
-}]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="e8e04e51-fa90-47cd-ae2f-8094971f02ec" name="testFlow"/>
     </flow>
 </mule>
