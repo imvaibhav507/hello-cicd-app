@@ -148,6 +148,11 @@
 		    <name>GitHub Packages</name>
 		    <url>https://maven.pkg.github.com/imvaibhav507/hello-cicd-app</url>
   		</repository>
+  		<repository>
+		    <id>mulesoft-public</id>
+		    <name>MuleSoft Public</name>
+		    <url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+		 </repository>
 	</repositories>
 
 	<pluginRepositories>
