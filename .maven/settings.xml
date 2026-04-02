@@ -27,11 +27,19 @@
 			</activation>
 			<repositories>
 				<repository>
+					<id>mulesoft-releases</id>
+					<url>https://repository.mulesoft.org/releases/</url>
+				</repository>
+				<repository>
 					<id>mule-public</id>
 					<url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
 				</repository>
 			</repositories>
 			<pluginRepositories>
+				<pluginRepository>
+					<id>mulesoft-releases</id>
+					<url>https://repository.mulesoft.org/releases/</url>
+				</pluginRepository>
 				<pluginRepository>
 					<id>mule-public</id>
 					<url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
