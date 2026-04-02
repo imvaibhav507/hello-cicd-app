@@ -19,12 +19,20 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    
+    # Required to authenticate and write to GitHub Packages
+    permissions:
+      contents: read
+      packages: write
+      
     env:
       CA_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
+      # Passed into the environment for your settings.xml to read
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - uses: actions/cache@v3
       with:
@@ -39,9 +47,20 @@ jobs:
         java-version: 17
         distribution: 'temurin'
 
+    - name: Build and Run MUnits
+      # Removed -Dmaven.test.skip=true. This will now run MUnits during the package phase.
+      run: mvn -B clean package -s .maven/settings.xml
 
-    - name: Build with Maven
-      run: mvn -B clean package -Dmaven.test.skip=true -s .maven/settings.xml
+    - name: Publish to GitHub Packages
+      # Only publish the package on a merge/push, not on PRs
+      if: github.event_name == 'push'
+      run: |
+        mvn deploy:deploy-file \
+          -s .maven/settings.xml \
+          -Dfile=$(ls target/*.jar | head -1) \
+          -DpomFile=pom.xml \
+          -DrepositoryId=github \
+          -Durl=https://maven.pkg.github.com/${{ github.repository }}
 
     - name: Stamp artifact file name with commit hash
       if: github.event_name == 'push'   # only needed for deploy flow
@@ -68,7 +87,7 @@ jobs:
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - uses: actions/cache@v3
       with:
@@ -86,7 +105,8 @@ jobs:
         artifactName=$(ls *.jar | head -1)
         mvn deploy \
          -s .maven/settings.xml \
-         -Dmule.artifact=$artifactName
+         -Dmule.artifact=$artifactName \
+         -DskipTests
 
 
   deploy:
@@ -98,7 +118,7 @@ jobs:
       CA_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - uses: actions/cache@v3
       with:
