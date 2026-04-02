@@ -48,15 +48,21 @@ jobs:
     - name: Run MUnit Tests (PR only)
       if: github.event_name == 'pull_request'
       run: |
-        MAVEN_OPTS="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED" \
-        mvn -B clean test -s .maven/settings.xml
+          MAVEN_OPTS="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED \
+          --add-opens java.base/java.util=ALL-UNNAMED \
+          --add-opens java.base/java.lang=ALL-UNNAMED \
+          --add-opens java.base/java.io=ALL-UNNAMED" \
+          mvn -B clean test -s .maven/settings.xml
 
     # BUILD (PUSH)
     - name: Build with Maven (Skip tests on push)
       if: github.event_name == 'push'
       run: |
-        MAVEN_OPTS="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED" \
-        mvn -B clean package -DskipTests -s .maven/settings.xml
+          MAVEN_OPTS="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED \
+          --add-opens java.base/java.util=ALL-UNNAMED \
+          --add-opens java.base/java.lang=ALL-UNNAMED \
+          --add-opens java.base/java.io=ALL-UNNAMED" \
+          mvn -B clean package -DskipTests -s .maven/settings.xml
 
     - name: Build with Maven
       run: mvn -B clean package -s .maven/settings.xml
