@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="test-test-suite.xml" />
+	<munit:test name="test-test-suite-testFlowTest" doc:id="e49e2275-ffea-4c29-aa63-463f9675f1fb" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to testFlow" doc:id="c5edfa16-c7f4-4234-90b7-e808e134266d" name="testFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert expression" doc:id="2866c402-40d4-4bfe-994e-e0afe0181eb5" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
