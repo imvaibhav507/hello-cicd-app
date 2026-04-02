@@ -103,7 +103,7 @@ output application/json
 		<ee:transform doc:name="Transform Message" doc:id="ebdb1288-d711-4b17-8384-84ba41abb177" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
+output application/json
 ---
 {
 	"message": "hello world!!",

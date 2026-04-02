@@ -4,7 +4,7 @@
 
 	<groupId>9d11e3b3-8ae9-4d0f-95ee-cf30a4856be4</groupId>
 	<artifactId>hello-cicd-app</artifactId>
-	<version>1.0.9</version>
+	<version>1.0.10</version>
 	<packaging>mule-application</packaging>
 	<name>hello-cicd-app</name>
 
