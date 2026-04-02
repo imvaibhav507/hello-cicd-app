@@ -68,7 +68,7 @@
 				<configuration>
 					<coverage>
 						<runCoverage>true</runCoverage>
-					    <requiredApplicationCoverage>90</requiredApplicationCoverage>
+						<requiredApplicationCoverage>90</requiredApplicationCoverage>
 						<formats>
 							<format>html</format>
 							<format>console</format>
@@ -158,12 +158,8 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
-			<name>MuleSoft Releases Repository</name>
-			<layout>default</layout>
+			<name>MuleSoft Plugin Repository</name>
 			<url>https://repository.mulesoft.org/releases/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
