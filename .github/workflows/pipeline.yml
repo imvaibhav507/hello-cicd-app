@@ -51,6 +51,9 @@ jobs:
         mvn -B clean test \
           -s .maven/settings.xml \
           -DargLine="--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
+          
+    - name: Set MAVEN_OPTS
+      run: echo "MAVEN_OPTS=--add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED" >> $GITHUB_ENV
 
     # NORMAL BUILD (PUSH)
     - name: Build with Maven (Skip tests on push)
