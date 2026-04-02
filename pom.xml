@@ -31,6 +31,9 @@
 				<extensions>true</extensions>
 				<configuration>
 					<runtimeVersion>4.6.0</runtimeVersion>
+					<repository>
+				        <id>anypoint-exchange-v3</id>
+				    </repository>
 					<cloudhub2Deployment>
 			            <uri>https://anypoint.mulesoft.com</uri>
 			            <provider>MC</provider>
