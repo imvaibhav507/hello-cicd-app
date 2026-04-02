@@ -19,26 +19,43 @@
 	<pluginGroups>
 		<pluginGroup>org.mule.tools</pluginGroup>
 	</pluginGroups>
-    <profiles>
-        <profile>
-            <id>mule-repo</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-
-            <repositories>
-                <repository>
-                    <id>mule-public</id>
-                    <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
-                </repository>
-            </repositories>
-
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>mule-public</id>
-                    <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-    </profiles>
+	<activeProfiles>
+		<activeProfile>github</activeProfile>
+	</activeProfiles>
+	<profiles>
+		<profile>
+			<id>github</id>
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>https://repo.maven.apache.org/maven2</url>
+				</repository>
+				<repository>
+					<id>github</id>
+					<url>https://maven.pkg.github.com/imvaibhav507/hello-cicd-app</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+		<profile>
+			<id>mule-repo</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<repository>
+					<id>mule-public</id>
+					<url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>mule-public</id>
+					<url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
 </settings>

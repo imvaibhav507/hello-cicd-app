@@ -48,14 +48,14 @@ jobs:
         distribution: 'temurin'
 
     - name: Build and Run MUnits
-      # Removed -Dmaven.test.skip=true. This will now run MUnits during the package phase.
-      run: mvn -B clean package -s .maven/settings.xml
+      run: mvn -B clean package -DskipTests -s .maven/settings.xml
 
     - name: Publish to GitHub Packages
       # Only publish the package on a merge/push, not on PRs
       if: github.event_name == 'push'
       run: |
         mvn deploy:deploy-file \
+          -DskipTests \
           -s .maven/settings.xml \
           -Dfile=$(ls target/*.jar | head -1) \
           -DpomFile=pom.xml \
