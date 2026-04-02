@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.10.0</app.runtime>
-		<mule.maven.plugin.version>3.9.1</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
 		<munit.version>3.6.2</munit.version>
 	</properties>
 
@@ -161,6 +161,10 @@
 			<name>MuleSoft Plugin Repository</name>
 			<url>https://repository.mulesoft.org/nexus/content/repositories/releases/</url>
 		</pluginRepository>
+		<pluginRepository>
+	        <id>mule-public</id>
+	        <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+    	</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
