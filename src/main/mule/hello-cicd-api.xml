@@ -106,7 +106,8 @@ output application/json
 output application/java
 ---
 {
-	"message": "hello world!!"
+	"message": "hello world!!",
+	"description": "Testing pipeline."
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
